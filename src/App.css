@@ -1,0 +1,32 @@
+.accordion {
+  margin-top: 40px;
+  width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 3px 3px 7px rgb(211, 211, 211);
+}
+
+.accordion-item {
+  background-color: white;
+  padding: 15px 30px;
+  margin-bottom: 1.5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+
+.accordion-item__header {
+  font-size: medium;
+  line-height: 2;
+  font-weight: 500;
+  color: rgb(114, 203, 20);
+}
+
+.accordion-item__content {
+  color: rgb(184, 184, 188);
+  padding: 10px;
+  font-size: 14px;
+}
+
+.accordion__expanded {
+  max-height: 100vh;
+}
