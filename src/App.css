@@ -15,18 +15,32 @@
 }
 
 .accordion-item__header {
-  font-size: medium;
+  font-size: 15px;
   line-height: 2;
-  font-weight: 500;
-  color: rgb(114, 203, 20);
+  font-weight: 405;
+  color: rgb(123, 211, 22);
+  display: flex;
+  justify-content: space-between;
 }
 
 .accordion-item__content {
-  color: rgb(184, 184, 188);
+  color: rgb(183, 183, 188);
   padding: 10px;
   font-size: 14px;
 }
 
+.accordion-item__chevron {
+  width: 18px;
+  height: 18px;
+  rotate: 0deg;
+  transition: all 0.5s ease-out;
+}
+
 .accordion__expanded {
   max-height: 100vh;
+  transition: all 0.9s ease-in-out;
+}
+
+.accordion-item.accordion__expanded .accordion-item__chevron {
+  rotate: 180deg;
 }

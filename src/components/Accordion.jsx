@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../App.css";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const data = [
   {
@@ -24,10 +25,17 @@ const data = [
 ];
 
 function Accordion() {
+  const [open, setOpen] = useState(null);
+
   return (
     <div className="accordion">
       {data.map((item) => (
-        <AccordionItem key={item.id} item={item} />
+        <AccordionItem
+          key={item.id}
+          item={item}
+          setOpen={setOpen}
+          open={open}
+        />
       ))}
     </div>
   );
@@ -35,15 +43,17 @@ function Accordion() {
 
 export default Accordion;
 
-function AccordionItem({ item }) {
-  const [isOpen, setIsOpen] = useState(false);
+function AccordionItem({ item, setOpen, open }) {
+  const isOpen = item.id === open;
+
   return (
     <div className={`accordion-item ${isOpen ? "accordion__expanded" : ""}`}>
       <div
         className="accordion-item__header"
-        onClick={() => setIsOpen((is) => !is)}
+        onClick={() => setOpen(item.id === open ? null : item.id)}
       >
-        {item.title}
+        <div> {item.title}</div>
+        <ChevronDownIcon className="accordion-item__chevron" />
       </div>
       <div className="accordion-item__content">{item.content}</div>
     </div>
